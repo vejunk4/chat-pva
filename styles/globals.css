@@ -1,0 +1,347 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+html, body {
+  min-height: 100vh;
+  width: 100vw;
+  background: #fff;
+  color: #111;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+}
+
+h1, h2 {
+  font-weight: 600;
+  color: inherit;
+  margin-bottom: 1rem;
+}
+
+.chat-main {
+  display: flex;
+  flex-direction: row;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: none;
+  border-radius: 0;
+  min-height: 80vh;
+  gap: 2rem;
+}
+
+.online-users-col {
+  min-width: 140px;
+  max-width: 180px;
+  background: #f6f6f6;
+  border-radius: 0;
+  padding: 1rem 0.5rem;
+  color: inherit;
+  border-right: 2px solid #eee;
+}
+.online-users-col h2 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #888;
+  letter-spacing: 0.5px;
+}
+.online-users-col div {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+  word-break: break-word;
+}
+
+.chat-area-col {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+#msgs {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 0;
+  padding: 1rem 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  overflow-y: auto;
+  color: inherit;
+  font-size: 1rem;
+  border: 2px solid #eee;
+}
+#msgs::-webkit-scrollbar {
+  width: 4px;
+  background: transparent;
+}
+#msgs::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 2px;
+}
+
+.zpravicka {
+  padding: 8px 12px;
+  margin: 8px 0;
+  background: #f6f6f6;
+  border-radius: 6px;
+  color: #111;
+  font-size: 1rem;
+  border: 2px solid #eee;
+  max-width: 90vw;
+  word-break: break-word;
+}
+.zpravicka:hover {
+  background: #ededed;
+}
+
+.zpravicka.me {
+  background: #2563eb !important;
+  color: #fff !important;
+  border: 2px solid #2563eb !important;
+  box-shadow: none !important;
+}
+
+.dark-mode .zpravicka.me {
+  background: #2563eb !important;
+  color: #fff !important;
+  border: 2px solid #2563eb !important;
+}
+
+#msg-box {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  width: 100%;
+  padding-bottom: 1rem;
+  background: none;
+  justify-content: flex-end;
+}
+
+#msg-input {
+  flex: 1 1 auto;
+  height: 40px;
+  border-radius: 4px;
+  border: 2px solid #eee;
+  background: #fff;
+  color: #111;
+  font-size: 1rem;
+  padding: 0 1rem;
+}
+#msg-input:focus {
+  border: 2px solid #bbb;
+  background: #fafafa;
+  outline: none;
+}
+#msg-input::placeholder {
+  color: #bbb;
+  opacity: 1;
+  font-size: 1rem;
+}
+
+#send-msg, .clear-chat-btn {
+  height: 40px;
+  border-radius: 4px;
+  min-width: 60px;
+  font-size: 1rem;
+  background: #111;
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+#send-msg:hover, .clear-chat-btn:hover {
+  background: #444;
+}
+.clear-chat-btn {
+  background: #fff;
+  color: #d00;
+  border: 2px solid #eee;
+  margin-right: auto;
+}
+.clear-chat-btn:hover {
+  background: #ffeaea;
+  color: #a00;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.login-card {
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 0;
+  border: 2px solid #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 240px;
+}
+.login-card h1 {
+  margin-bottom: 1rem;
+  color: #111;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.login-card input[type="text"] {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 2px solid #eee;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  background: #fff;
+  color: #111;
+}
+.login-card input[type="text"]:focus {
+  border: 2px solid #bbb;
+}
+.login-card button {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.login-card button:hover {
+  background: #444;
+}
+
+.theme-toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 200;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: inherit;
+  cursor: pointer;
+}
+
+.dark-mode, .dark-mode body, .dark-mode html {
+  background: #111 !important;
+  color: #fafafa;
+}
+.dark-mode .chat-main {
+  background: none;
+}
+.dark-mode .online-users-col {
+  background: #18181b;
+  color: #fafafa;
+  border-right: 2px solid #23232a;
+}
+.dark-mode .online-users-col h2 {
+  color: #bbb;
+}
+.dark-mode .online-users-col div {
+  color: #fafafa;
+}
+.dark-mode #msgs {
+  background: #18181b;
+  color: #fafafa;
+  border: 2px solid #23232a;
+}
+.dark-mode .zpravicka {
+  background: #23232a;
+  color: #fafafa;
+  border: 2px solid #23232a;
+}
+.dark-mode .zpravicka:hover {
+  background: #18181b;
+}
+.dark-mode #msg-input {
+  background: #23232a;
+  color: #fafafa;
+  border: 2px solid #23232a;
+}
+.dark-mode #msg-input:focus {
+  background: #23232a;
+  border: 2px solid #bbb;
+}
+.dark-mode #send-msg, .dark-mode .login-card button {
+  background: #fafafa;
+  color: #111;
+}
+.dark-mode #send-msg:hover, .dark-mode .login-card button:hover {
+  background: #bbb;
+  color: #111;
+}
+.dark-mode .clear-chat-btn {
+  background: #23232a;
+  color: #ff6a6a;
+  border: 2px solid #23232a;
+}
+.dark-mode .clear-chat-btn:hover {
+  background: #18181b;
+  color: #ff2222;
+}
+.dark-mode .login-container {
+  background: #111;
+}
+.dark-mode .login-card {
+  background: #18181b;
+  border: 2px solid #23232a;
+}
+.dark-mode .login-card h1 {
+  color: #fafafa;
+}
+.dark-mode .login-card input[type="text"] {
+  background: #23232a;
+  color: #fafafa;
+  border: 2px solid #23232a;
+}
+.dark-mode .login-card input[type="text"]:focus {
+  border: 2px solid #bbb;
+}
+
+@media (max-width: 900px) {
+  .chat-main {
+    flex-direction: column;
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+  .online-users-col {
+    margin-bottom: 1rem;
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+    padding: 0.5rem;
+    border-right: none;
+    border-bottom: 2px solid #eee;
+  }
+  .dark-mode .online-users-col {
+    border-bottom: 2px solid #23232a;
+    border-right: none;
+  }
+  #msgs, #msg-box {
+    max-width: 100vw;
+    border-radius: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .zpravicka {
+    max-width: 98vw;
+    font-size: 1rem;
+    padding: 8px 8px;
+  }
+}

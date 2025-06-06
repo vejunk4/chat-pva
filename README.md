@@ -29,20 +29,17 @@ This is a modern chat app with real-time support, light/dark mode toggle, encryp
 3. **Set up .env:**
    In the project root, create a `.env` file and set:
    ```env
-   DATABASE_URL="mysql://user:password@localhost:3306/dbname"
+   DATABASE_URL="mysql://root:password@localhost:3306/superdatabase"
    NEXT_PUBLIC_AES_KEY=somethingverysecret
    ```
 4. **Run database migration:**
    ```bash
    npx prisma migrate deploy
-   # or for development
-   npx prisma migrate dev
+   npx prisma generate
    ```
 5. **Start the app:**
    ```bash
    npm run dev
-   # or
-   node server.js
    ```
    The app will run at http://localhost:4000
 
@@ -61,6 +58,3 @@ This is a modern chat app with real-time support, light/dark mode toggle, encryp
 - Main logic: `pages/index.js` (frontend) and `server.js` (backend/socket.io).
 - Styles: `styles/globals.css`.
 - API for users and messages: `pages/api/users.js` and `pages/api/messages.js`.
-
-## Contact
-For questions or modifications, contact the author or open an issue.

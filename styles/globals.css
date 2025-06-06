@@ -78,14 +78,19 @@ h1, h2 {
   color: inherit;
   font-size: 1rem;
   border: 2px solid #eee;
+  max-height: 51vh;
 }
 #msgs::-webkit-scrollbar {
-  width: 4px;
+  width: 8px;
   background: transparent;
 }
 #msgs::-webkit-scrollbar-thumb {
-  background: #ddd;
-  border-radius: 2px;
+  border-radius: 8px;
+  min-height: 40px;
+}
+#msgs {
+  scrollbar-width: thin;
+  scrollbar-color: #23232a transparent;
 }
 
 .zpravicka {
@@ -345,3 +350,4 @@ h1, h2 {
     padding: 8px 8px;
   }
 }
+

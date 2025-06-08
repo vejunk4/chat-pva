@@ -13,7 +13,7 @@ This is a modern chat app with real-time support, light/dark mode toggle, encryp
 - Modern and responsive design
 
 ## Requirements
-- Node.js (recommended 18+)
+- Node.js 
 - MySQL database
 
 ## Installation
